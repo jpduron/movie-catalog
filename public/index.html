@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Películas 🎬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🎬 Catálogo de Películas</h1>
+            <button id="btnOpenCreate" class="btn btn-primary">＋ Nueva Película</button>
+        </header>
+
+        <!-- Tabla de Registros -->
+        <div class="table-container">
+            <table id="moviesTable">
+                <thead>
+                    <tr>
+                        <th>Portada</th>
+                        <th>Título</th>
+                        <th>Año</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="moviesTableBody">
+                    <!-- Los datos se inyectarán dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación básica -->
+        <div class="pagination" id="paginationControls">
+            <!-- Controles de paginación -->
+        </div>
+    </div>
+
+    <!-- Modal Unificado para Agregar / Editar / Ver Detalle -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="btnCloseModal">&times;</span>
+            <h2 id="modalTitle">Detalle de Película</h2>
+            
+            <form id="movieForm">
+                <input type="hidden" id="movieId">
+
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Año:</label>
+                    <input type="number" id="year">
+                </div>
+
+                <div class="form-group">
+                    <label for="cover">URL de la Portada:</label>
+                    <input type="url" id="cover" placeholder="https://ejemplo.com/imagen.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label for="synopsis">Sinopsis:</label>
+                    <textarea id="synopsis" rows="4"></textarea>
+                </div>
+
+                <div class="modal-buttons" id="modalButtons">
+                    <button type="submit" id="btnSave" class="btn btn-success">Guardar</button>
+                    <button type="button" id="btnClose" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
